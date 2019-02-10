@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Page Title</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <!-- https://cdnjs.com/libraries/babel-standalone -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
+    <script type="text/babel" src="Card.js"></script>
+    <script src="data.js"></script>
+	<body>
+		</head>
+	<div id="root"></div>
+
+    <script type="text/babel">
+    // ADD Key!!!
+    const cards = data.map((course)=>{
+        return <Card data={course} />
+    })
+    ReactDOM.render(
+		<div className="row">
+			{cards}
+		</div>,
+		document.getElementById('root')
+	)
+	</script>
+
+</body>
+</html>
