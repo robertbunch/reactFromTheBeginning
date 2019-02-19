@@ -1,44 +1,43 @@
-[
+const data = [
     {
-        title: "code",
-        icon: "Development"
+        icon: "code",
+        title: "Development"
     },
     {
-        title: "business",
-        icon: "Business"
+        icon: "business",
+        title: "Business"
     },
     {
-        title: "computer",
-        icon: "IT & Software"
+        icon: "computer",
+        title: "IT & Software"
     },
     {
-        title: "library_books",
-        icon: "Office Productivity"
+        icon: "library_books",
+        title: "Office Productivity"
     },
     {
-        title: "person",
-        icon: "Personal Development"
+        icon: "person",
+        title: "Personal Development"
     },
     {
-        title: "mode_edit",
-        icon: "Personal Development"
+        icon: "mode_edit",
+        title: "Personal Development"
+    },    
+    {
+        icon: "track_changes",
+        title: "Marketing"
     },    {
-        title: "track_changes",
-        icon: "Marketing"
-    },    {
-        title: "directions_bike",
-        icon: "Health & Fitness"
-    },    {
-        title: "music_note",
-        icon: "Music"
+        icon: "directions_bike",
+        title: "Health & Fitness"
+    },    
+    {
+        icon: "music_note",
+        title: "Music"
     },
 ]
 
-ReactDom.render(
-    <div class="row">
-        <ul class="cat-nav center-align">
-    
-        </ul>
-    </div>,
+ReactDOM.render(
+    <CatNav data={data}/>,
     document.getElementById('root')
 );
+
