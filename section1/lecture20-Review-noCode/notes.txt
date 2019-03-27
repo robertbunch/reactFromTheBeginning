@@ -1,0 +1,12 @@
+What is React
+Why we need React
+Why an Express server?
+React in its simiplest form
+The pieces of React
+The basics of JSX & Babel
+The basics of ReactDOM.render and the virtual DOM
+Component basics
+Prop basics
+Components in an array
+Components as classes
+Breaking down components into small parts
