@@ -17,7 +17,7 @@
 - setState on "message" to notify the user that they agree to the site terms of service by filling out the form
 
 # Add another event
-- add the onMouseEnter event to the h1 so that it clears the text when the user hovers over it
+- add the onMouseEnter event to the h3 so that it clears the text when the user hovers over it
 
 # Add another tag and event
 - add an image tag (point at any URL)
