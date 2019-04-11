@@ -13,6 +13,7 @@
 
 # Add event and state change to StatePractice
 - remove sanity check and replace it with an input box and an h3
+- in the h3, render the message piece of state
 - use onFocus on the input box so that when the user clicks on the input, state updates
 - setState on "message" to notify the user that they agree to the site terms of service by filling out the form
 
