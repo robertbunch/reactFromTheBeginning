@@ -3,7 +3,7 @@
 - make it a class, specifically a subclass of Component
 - export the class as default
 - add the constructor and super
-- initialize state in the constructor with a property of message
+- initialize state in the constructor with a property of message and a value of empty string
 - add a render method
 - return a sanity check
 
