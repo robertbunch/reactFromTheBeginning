@@ -13,7 +13,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <CardSet cards={cards} />
+        <div className="row">
+          <CardSet cards={cards} />
+        </div>
       </div>
     );
   }
