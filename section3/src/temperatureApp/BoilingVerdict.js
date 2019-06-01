@@ -7,4 +7,4 @@ function BoilingVerdict(props) {
     return <p>The water would not boil.</p>;
 }
 
-export default BoilingVerdict;
+  export default BoilingVerdict;
