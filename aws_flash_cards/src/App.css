@@ -1,33 +1,105 @@
 .App {
   text-align: center;
+  min-height: 100vh; 
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.card-holder{
+  min-height: 300px;
+  perspective: 1200px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.nav-card{
+  padding: 50px;
+  box-shadow: 0 0.125rem 1.25rem 0 rgba(0,0,0,0.24);
+  border-radius: 0.3125rem;
+  cursor: pointer; 
+  max-width: 200px;
+}
+
+.card{
+  height: 200px;
+  box-shadow: 0 0.125rem 1.25rem 0 rgba(0,0,0,0.24);
+  border-radius: 0.3125rem;
+  transform-style: preserve-3d;
+	transition: 1s all;
+  cursor: pointer;   
+}
+
+.nav-card span{
+  display: block;
+}
+
+.card-back, .card-front{
+	position: absolute;
+	top: 0;
+	left: 0;
+  backface-visibility: hidden;
+  height: 100%;
+  width: 100%;
+  font-size: 30px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: column;
 }
 
-.App-link {
-  color: #61dafb;
+.card-front{
+	transform: rotateY(180deg);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.flip,.tempFlip{
+	transform: rotateY(-180deg);
 }
+
+.nav-link{
+  cursor: pointer;
+}
+
+.spinner-wrapper{
+  padding-top: 50px;
+  min-height: 200px;
+}
+
+.option{
+  border: 1px solid black;
+  width: 80px;
+  margin:auto;
+}
+
+.overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1050;
+  opacity: 1;
+  background-color: rgba(0,0,0,0.54);
+  width: 100vw;
+  height: 100vw;
+
+}
+
+.info{
+  position: absolute;
+  color: black;
+  background-color: white;
+  border-radius: 5px;
+  padding: 30px;
+  z-index: 1000;
+  width: 500px;
+  top: 20%;
+  left: 50%;
+  margin-top: -100px; /* Negative half of height. */
+  margin-left: -250px; /* Negative half of width. */  
+}
+
+ul.multi{
+  display: block;
+  list-style-type: none;
+  width: 100%;
+}
+
+ul.multi li{
+  display: inline;
+  padding: 0 5px;
+  font-size: 16px;
+}
+
