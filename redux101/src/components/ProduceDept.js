@@ -14,8 +14,8 @@ class ProduceDept extends Component{
             return(
                 <div key={i}>
                     <li>{item.food}: {item.quantity}</li>
-                    <input type="button" onClick={()=>{this.increment(1,i)}} value="+" />
-                    <input type="button" onClick={()=>{this.increment(-1,i)}} value="-" />
+                    <input className="add-button" type="button" onClick={()=>{this.increment(1,i)}} value="+" />
+                    <input className="subtract-button" type="button" onClick={()=>{this.increment(-1,i)}} value="-" />
                 </div>
             )
 })

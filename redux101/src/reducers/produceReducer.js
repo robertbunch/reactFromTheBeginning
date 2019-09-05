@@ -28,6 +28,8 @@ export default (state = seedData, action)=>{
         const newState = [...state];
         newState[payload.index].quantity += payload.qChange;
         return newState;
+    }else if(action.type === 'clearInventory'){
+        return [];        
     }else{
         return state;
     }

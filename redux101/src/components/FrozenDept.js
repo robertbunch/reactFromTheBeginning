@@ -19,8 +19,8 @@ class FrozenDept extends Component{
             return (
                 <div key={i}>
                     <li>{item.food}: {item.quantity}</li>
-                    <input type="button" onClick={()=>{this.increment('+',i)}} value="+" />
-                    <input type="button" onClick={()=>{this.increment('-',i)}} value="-" />
+                    <input className="add-button" type="button" onClick={()=>{this.increment('+',i)}} value="+" />
+                    <input className="subtract-button" type="button" onClick={()=>{this.increment('-',i)}} value="-" />
                 </div>
             )
         })
