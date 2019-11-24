@@ -1,0 +1,16 @@
+
+.slick .slick-prev:before, .slick .slick-next:before{
+    font-size: 30px;
+}
+
+.slick .slick-arrow{
+    z-index: 100;
+}
+
+.slick .slick-arrow.slick-prev{
+    left: 15px;
+}
+
+.slick .slick-arrow.slick-next{
+    right: 25px;
+}

@@ -1,0 +1,31 @@
+.city{
+    position: relative;
+    overflow-wrap: break-word;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 1.44444em;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    margin: 0px;
+    text-transform: capitalize;
+}
+
+.city img{
+    max-width: 100%;
+}
+
+.city .city-name, .city .price{
+    position: absolute;
+    bottom: 25px;
+    left: 0px;
+    right: 0px;
+    padding-bottom: 32px;
+    padding-left: 24px;
+    padding-right: 24px;    
+}
+
+.city .price{
+    bottom: 0px;   
+    font-weight: normal;
+}
