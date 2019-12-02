@@ -11,3 +11,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.main-header-text{
+    font-size: 30px !important;
+    line-height: 36px !important;
+    letter-spacing: normal !important;
+    color: #484848 !important;
+    padding-top: 6px !important;
+    padding-bottom: 6px !important;
+    margin: 0px !important;
+    margin-bottom: 20px !important;
+    padding: 0px !important;
+    font-weight: bold;
+}

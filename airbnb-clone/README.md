@@ -8,10 +8,18 @@
         - asia
         - us
         - exotic
-- /city/:cityName
+- /city/:cityId
 
 - /venues/recommended
 - /venues/superHost
 - /venue/:venueId
+
+- /activities/today
+- /activities/:feature
+    - scenery
+    - baking
+    - diving
+    - animals
+- /activity/:id
 
 - /seach/:searchTerm

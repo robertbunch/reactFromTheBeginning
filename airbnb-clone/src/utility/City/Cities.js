@@ -11,7 +11,10 @@ function Cities(props){
         )
     })
     return(
-        <SlickSlider elements={cities} />
+        <div className="cities-wrapper">
+            <h1 className="main-header-text">{props.header}</h1>
+            <SlickSlider elements={cities} />
+        </div>
     )
 }
 

@@ -6,14 +6,14 @@ import NavBar from './utility/NavBar/NavBar';
 
 class App extends Component{
 
-  render(){
-    return(
-      <Router>
-        <Route path="/" component={NavBar} />
-        <Route exact path="/" component={Home} />
-      </Router>
-    )
-  }
+	render(){
+    	return(
+      		<Router>
+        		<Route path="/" component={NavBar} />
+        		<Route exact path="/" component={Home} />
+      		</Router>
+    	)
+  	}
 
 }
 
