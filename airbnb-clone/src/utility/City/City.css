@@ -11,6 +11,11 @@
     text-transform: capitalize;
 }
 
+
+.city a{
+    color: rgb(255, 255, 255);
+}
+
 .city img{
     max-width: 100%;
 }
