@@ -5,7 +5,7 @@ import Activity from './Activity';
 class Activities extends Component{
 
     render(){
-        console.log(this.props.activities);
+        // console.log(this.props.activities);
         const activities = this.props.activities.map((activity,i)=>{
             return(
                 <div key={i} className="col s2">
