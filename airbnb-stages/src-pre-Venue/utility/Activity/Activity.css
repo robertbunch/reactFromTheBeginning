@@ -1,0 +1,12 @@
+.activities{
+    margin-top:20px;
+}
+
+.activities .activity a{
+    color: #000;
+}
+
+.activities .activity img{
+    max-width: 100%;
+    border-radius: 8px;
+}
