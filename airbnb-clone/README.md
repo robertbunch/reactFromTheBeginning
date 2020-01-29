@@ -23,3 +23,5 @@
 - /activity/:id
 
 - /seach/:searchTerm
+
+- /points/get
