@@ -10,11 +10,20 @@ class Modal extends Component{
     }
 
     render(){
+        let modalInlineStyle
+        if(this.props.siteModal.openClose === "open"){
+            modalInlineStyle = {display: 'block'};
+        }else{
+            modalInlineStyle = {display: 'none'};
+        }
+        
+
         return(
             <div className="site-modal" style={modalInlineStyle}>
                 <div className="modal-content">
                     <div className="col right">
-                        <span onClick={} className="close">&times;</span>
+                        <span onClick={this.closeModal} className="close">&times;</span>
+                        {this.props.siteModal.content}
                     </div>
                 </div>
             </div>
@@ -24,7 +33,7 @@ class Modal extends Component{
 
 function mapStateToProps(state){
     return{
-
+        siteModal: state.siteModal
     }
 }
 

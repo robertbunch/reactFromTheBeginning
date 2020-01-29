@@ -1,0 +1,205 @@
+.login-modal{
+    display: none;
+    background-color: white;
+    width: 40%;
+    max-width: 568px !important;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20vh;
+    margin-top: 10px;
+    z-index: 100;
+    box-sizing: border-box !important;
+    padding: 32px !important;
+}
+
+#close-modal{
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+}
+
+.body-modal-show{
+    position: fixed;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    overflow: hidden;
+    z-index: 1;
+    background-color: #484848;
+
+}
+
+.facebook-login{
+    cursor: pointer;
+    transition-property: background, border-color, color;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out;
+    position: relative;
+    text-align: center;
+    width: 100%;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: normal;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: 800;
+    padding-left: 22px;
+    padding-right: 22px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    border-radius: 4px;
+    border-width: 2px;
+    border-style: solid;
+    background: rgb(69, 104, 178);
+    border-color: transparent;    
+    margin-top: 30px;
+    margin-bottom: 8px;
+}
+
+.google-login{
+    cursor: pointer;
+    transition-property: background, border-color, color;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: normal;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: 800;
+    color: rgb(72, 72, 72);
+    text-decoration: none;
+    border-radius: 4px;
+    border-width: 2px;
+    border-style: solid;
+    background: rgb(255, 255, 255);
+    border-color: rgb(118, 118, 118);
+}    
+
+.email-login{
+    color: #ffffff;    
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    transition-property: background, border-color, color;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: normal;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: 800;
+    padding-left: 22px;
+    padding-right: 22px;
+    min-width: 71.1935px;
+    box-shadow: none;
+    color: rgb(255, 255, 255);
+    margin: 0px;
+    text-decoration: none;
+    border-radius: 4px;
+    border-width: 2px;
+    border-style: solid;
+    background: rgb(255, 90, 95);
+    border-color: transparent;
+}    
+.login-modal span{
+    margin: 20px 0px;
+    display: inline-block;
+}
+
+.login-modal .login-text{
+    text-align: left;
+    overflow-wrap: break-word !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 1.375em !important;
+    color: rgb(72, 72, 72) !important;
+    margin: 0px !important;
+}
+
+.login-modal .border-rule{
+    border-bottom: 1px #EBEBEB solid;
+    margin-top: 16px;
+    margin-bottom: 16px;    
+}
+
+.login-modal .register-form, .login-modal .login-form {
+    margin-top: 20px;
+}
+
+.login-modal .register-form input, .login-modal .login-form input{
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: normal;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+    color: #484848;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    font-weight: normal;
+    background-color: transparent;
+    padding-left: 11px;
+    padding-right: 11px;
+    width: 100% !important;
+    border-width: 1px !important;
+    border-style: solid !important;
+    border-color: rgb(235, 235, 235) !important;
+    border-radius: 4px !important;    
+}
+
+.login-modal .register-form input::-webkit-input-placeholder, .login-modal .login-form input::-webkit-input-placeholder  { /* Chrome/Opera/Safari */
+    color: #484848;
+}
+
+.sign-up-button{
+    display: inline-block !important;
+    position: relative !important;
+    text-align: center !important;
+    transition-property: background, border-color, color !important;
+    transition-duration: 0.2s !important;
+    transition-timing-function: ease-out !important;
+    cursor: pointer !important;
+    width: 100% !important;
+    font-size: 16px !important;
+    line-height: 24px !important;
+    letter-spacing: normal !important;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    font-weight: 800 !important;
+    padding-left: 22px !important;
+    padding-right: 22px !important;
+    min-width: 71.1935px !important;
+    box-shadow: none !important;
+    color: rgb(255, 255, 255) !important;
+    margin: 0px !important;
+    text-decoration: none !important;
+    border-radius: 4px !important;
+    border-width: 2px !important;
+    border-style: solid !important;
+    background: rgb(255, 90, 95) !important;
+    border-color: transparent !important;
+}
+
+.login-text span{
+    cursor: pointer;
+    color: blue;
+}
+
+
