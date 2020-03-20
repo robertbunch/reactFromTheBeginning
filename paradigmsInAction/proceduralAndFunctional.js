@@ -12,9 +12,9 @@ function createDeck(){
     return theDeck;
 }
 
-function shuffleDeck(emptyDeck){
+function shuffleDeck(freshDeck){
     //shuffle the deck
-    const deck = [...emptyDeck]; //WE DONT MUTATE the var passed
+    const deck = [...freshDeck]
     for(let i = 0; i < 10000; i++){
         let card1Index = Math.floor(Math.random() * deck.length);
         let card2Index = Math.floor(Math.random() * deck.length);
@@ -25,32 +25,35 @@ function shuffleDeck(emptyDeck){
     return deck;
 }
 
-// the simple truth ... we need state
+// we need some share state!
 const theStore = ()=>{
-    const state = {}; //REDUX!!!
+    // this is where we keep our stuff! And nobody messes with it
+    const state = {}; //rootReducer
     return {
-        setState: (prop,value)=>state[prop] = value,
-        getState: (prop)=>state[prop],
+        setState: (prop,value)=> state[prop] = value,
+        getState: (prop)=> state[prop],
     }
 }
 
-function addCardToHand(hand,deck,index){
+function addCardToHand(hand, deck, index){
     const newHand = [...hand];
     const newDeck = [...deck];
-    const newCard = newDeck[index];
-    newHand.push(newCard);
+    newHand.push(newDeck[index]);
     return newHand;
 }
 
+const store = theStore();
+
 const theDeck = createDeck();
 const shuffledDeck = shuffleDeck(theDeck);
-const cardState = theStore();
-cardState.setState('playerHand',[]);
-const playersCurentHand = cardState.getState('playerHand');
-console.log(playersCurentHand);
-const playersHandAfteCardDealt = addCardToHand(playersCurentHand,theDeck,0);
-console.log(playersHandAfteCardDealt);
-
-theDeck.setState('locationInDeck',0);
-theDeck.setState('locationInDeck',theDeck.getState('locationInDeck')+1);
-
+store.setState('deck',shuffledDeck);
+store.setState('playersHand',[])
+store.setState('dealersHand',[]);
+store.setState('placeInDeck',0);
+const playerHandAfterDeal = addCardToHand(
+    store.getState('playersHand'),
+    store.getState('deck'),
+    store.getState('placeInDeck'),
+)
+store.setState('playersHand',playerHandAfterDeal)
+store.setState('placeInDeck',store.getState('placeInDeck')+1)
