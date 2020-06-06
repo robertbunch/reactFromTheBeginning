@@ -11,8 +11,10 @@ class Modal extends Component{
     }
 
     closeModal = ()=>{
-        this.props.openModal('close','');
+        this.props.openModal('closed','');
     }
+
+
 
     render(){
         let modalInlineStyle
