@@ -12,6 +12,10 @@ class Login extends Component{
         password: "",
     }
 
+    changeEmail = (e)=>this.setState({email:e.target.value})
+    changePassword = (e)=>this.setState({password:e.target.value})
+
+
     submitLogin = (e)=>{
         e.preventDefault();
         console.log(this.state.email);
