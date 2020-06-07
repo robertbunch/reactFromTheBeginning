@@ -14,6 +14,9 @@
     cursor: pointer;
 }
 
+.nav ul li.login-signup{
+    margin-right: 15px;
+}
 
 .nav .nav-non-link{
     padding: 0 15px;

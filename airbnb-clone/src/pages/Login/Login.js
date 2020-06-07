@@ -7,6 +7,17 @@ import SignUp from './SignUp';
 
 class Login extends Component{
 
+    state = {
+        email: "",
+        password: "",
+    }
+
+    submitLogin = (e)=>{
+        e.preventDefault();
+        console.log(this.state.email);
+        console.log(this.state.password);
+    }
+
     render(){
         return(
             <div className="login-form">
@@ -17,11 +28,11 @@ class Login extends Component{
                         <span>or</span>
                         <div className="or-divider"></div>
                     </div>
-                    <input type="text" className="browser-default" placeholder="Email address" />
-                    <input type="password" className="browser-default" placeholder="Password" />
+                    <input onChange={this.changeEmail} value={this.state.email} type="text" className="browser-default" placeholder="Email address" />
+                    <input onChange={this.changePassword} value={this.state.password} type="password" className="browser-default" placeholder="Password" />
                     <button className="sign-up-button">Login</button>
                     <div className="divider"></div>
-                    <div>Don't have an account? <span onClick={()=>{this.props.openModal('open',<SignUp />)}}>Sign up</span></div>
+                    <div>Don't have an account? <span className="pointer" onClick={()=>{this.props.openModal('open',<SignUp />)}}>Sign up</span></div>
                 </form>
             </div>
         )

@@ -25,3 +25,25 @@
 - /seach/:searchTerm
 
 - /points/get
+
+- /users/signup
+    -- expects: email,password
+    -- errors: {msg:invalidData} or {msg: "userExists"}
+    -- success: {
+                    msg: "userAdded",
+                    token,
+                    email,
+                }
+- /users/login
+    -- expects: email, password
+    -- errors: {msg: "badPass"} or {msg: "noEmail"}
+    -- success: {
+                    msg: "userAdded",
+                    token,
+                    email,
+                }
+
+- /token-check
+    -- expends: token
+    -- errors: {msg: "invalidToken"}
+    -- success: validatedToken
