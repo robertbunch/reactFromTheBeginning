@@ -36,7 +36,7 @@ class Login extends Component{
         // -- noEmail
         if(resp.data.msg === "noEmail"){
             swal({
-                title: "Please provide an email",
+                title: "That email is not registered.",
                 icon: "error",
               })
         // -- badPass
