@@ -37,6 +37,8 @@
 - /users/login
     -- expects: email, password
     -- errors: {msg: "badPass"} or {msg: "noEmail"}
+        -- badPass = valid username, but wrong passwrod
+        -- noEmail = email is not registered
     -- success: {
                     msg: "loggedIn",
                     token,
