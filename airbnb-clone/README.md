@@ -38,12 +38,12 @@
     -- expects: email, password
     -- errors: {msg: "badPass"} or {msg: "noEmail"}
     -- success: {
-                    msg: "userAdded",
+                    msg: "loggedIn",
                     token,
                     email,
                 }
 
-- /token-check
+- /users/token-check
     -- expends: token
     -- errors: {msg: "invalidToken"}
     -- success: validatedToken

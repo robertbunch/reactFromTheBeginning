@@ -3,7 +3,11 @@ import './Login.css'
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux'
 import openModal from '../../actions/openModal';
+import regAction from '../../actions/regAction'
+
 import Login from './Login'
+import axios from 'axios';
+import swal from 'sweetalert';
 
 class SignUp extends Component{
 
@@ -26,13 +30,56 @@ class SignUp extends Component{
         })
     }
 
-    submitLogin = (e)=>{
+    submitLogin = async(e)=>{
         e.preventDefault();
-        console.log(this.state.email);
-        console.log(this.state.password);
+        // console.log(this.state.email);
+        // console.log(this.state.password);
+        const url = `${window.apiHost}/users/signup`;
+        const data = {
+            email: this.state.email,
+            password: this.state.password
+        }
+        const resp = await axios.post(url,data);
+        const token = resp.data.token;
+        console.log(token)
+        console.log(resp.data);
+
+        ////////////
+        // resp.data.msg could be:
+        // - invalidData
+        // - userExists
+        // - userAdded
+        if(resp.data.msg === "userExists"){
+            swal({
+                title: "Email Exists",
+                text: "The email you provided is already registered. Please try another.",
+                icon: "error",
+              })            
+        }else if(resp.data.msg === "invalidData"){
+            swal({
+                title: "Invalid email/password",
+                text: "Please provide a valid email and password",
+                icon: "error",
+              })
+        }else if(resp.data.msg === "userAdded"){
+            swal({
+                title: "Success!",
+                icon: "success",
+              });
+            // we call our register action to update our auth reducer!!
+            this.props.regAction(resp.data);
+        }
+
+        // const url2 = `${window.apiHost}/users/token-check`;
+        // const resp2 = await axios.post(url2,{token});
+        // console.log(resp2.data);
+
     }
 
     render(){
+
+        console.log(this.props.auth);
+
         return(
             <div className="login-form">
                 <form onSubmit={this.submitLogin}>
@@ -53,13 +100,20 @@ class SignUp extends Component{
 
 }
 
+function mapStateToProps(state){
+    return{
+        auth: state.auth,
+    }
+}
+
 function mapDispatchToProps(dispatcher){
     return bindActionCreators({
-        openModal: openModal
+        openModal: openModal,
+        regAction: regAction,
     },dispatcher)
 }
 
-export default connect(null, mapDispatchToProps)(SignUp);
+export default connect(mapStateToProps, mapDispatchToProps)(SignUp);
 
 
 const SignUpInputFields = (props)=>{

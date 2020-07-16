@@ -16,7 +16,8 @@
     "react-slick": "^0.25.2",
     "redux": "^4.0.5",
     "redux-promise": "^0.6.0",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "sweetalert": "^2.1.2"
   },
   "scripts": {
     "start": "react-scripts start",

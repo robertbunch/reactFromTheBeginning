@@ -1,3 +1,7 @@
 export default(state = {}, action)=>{
-    return state;
+    if(action.type==="REGISTER_ACTION"){
+        return action.payload;
+    }else{
+        return state;
+    }
 }
