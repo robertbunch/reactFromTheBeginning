@@ -53,3 +53,20 @@
 - /venues/city/:cityName
     -- expects: cityName
     -- success: [venues]
+
+- /payment/create-session
+    -- expects: 
+        venueData,
+        totalPrice,
+        diffDays,
+        pricePerNight,
+        checkIn,
+        checkOut,
+        token,
+        currency (default: 'USD'),
+    -- success: A checkout screen with stripe!
+    -- errors: {msg: "missingData"} 
+    -- success callback path: http://localhost:3000/payment-success/:token
+        -- this is where Stripe is going to send the user after payment
+    -- failure callback path: http://localhost:3000/payment-canceled/:token
+        -- this is where Stripe is going to send the user if payment is canceled
