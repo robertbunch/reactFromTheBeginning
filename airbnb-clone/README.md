@@ -46,6 +46,10 @@
                 }
 
 - /users/token-check
-    -- expends: token
+    -- expects: token
     -- errors: {msg: "invalidToken"}
     -- success: validatedToken
+
+- /venues/city/:cityName
+    -- expects: cityName
+    -- success: [venues]

@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import './SingleFullVenue.css';
 import axios from 'axios';
 import Point from './Point';
+import { connect } from 'react-redux'
+import openModal from '../../actions/openModal';
+import { bindActionCreators } from 'redux';
+import Login from '../Login/Login'
 
 class SingleFullVenue extends Component{
 
@@ -37,6 +41,8 @@ class SingleFullVenue extends Component{
     }
 
     render(){
+        console.log(this.props.auth);
+
         console.log(this.state.singleVenue);
         const sv = this.state.singleVenue;
         return(
@@ -83,7 +89,11 @@ class SingleFullVenue extends Component{
                             </select>
                         </div>
                         <div className="col s12 center">
-                            <button onClick={this.reserveNow} className="btn red accent-2">Reserve</button>   
+                            {this.props.auth.token ?
+                                <button onClick={this.reserveNow} className="btn red accent-2">Reserve</button>   
+                            : <div>You must <span className="text-link" onClick={()=>{this.props.openModal('open',<Login />)}}>Log in</span> to reserve</div>
+                            }
+                            
                         </div>            
                     </div>
 
@@ -93,4 +103,16 @@ class SingleFullVenue extends Component{
     }
 }
 
-export default SingleFullVenue;
+function mapStateToProps(state){
+    return{
+        auth: state.auth,
+    }
+}
+
+function mapDispatchToProps(dispatch){
+    return bindActionCreators({
+        openModal
+    },dispatch);
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(SingleFullVenue);
