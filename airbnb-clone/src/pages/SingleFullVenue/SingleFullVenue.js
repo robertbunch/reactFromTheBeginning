@@ -8,6 +8,7 @@ import { bindActionCreators } from 'redux';
 import Login from '../Login/Login'
 import moment from 'moment';
 import swal from 'sweetalert';
+import loadScript from '../../utiltityFunctions/loadScript';
 
 class SingleFullVenue extends Component{
 
@@ -38,7 +39,7 @@ class SingleFullVenue extends Component{
     changeCheckIn = (e)=>{this.setState({checkIn: e.target.value})}
     changeCheckOut = (e)=>{this.setState({checkOut: e.target.value})}
 
-    reserveNow = (e)=>{
+    reserveNow = async(e)=>{
         const startDayMoment = moment(this.state.checkIn)
         const endDayMoment = moment(this.state.checkOut)
         const diffDays = endDayMoment.diff(startDayMoment,"days");
@@ -58,7 +59,23 @@ class SingleFullVenue extends Component{
             // diff days is a valid number!
             const pricePerNight = this.state.singleVenue.pricePerNight;
             const totalPrice = pricePerNight * diffDays;
-            
+            const scriptUrl = 'https://js.stripe.com/v3';
+            const stripePublicKey = 'pk_test_5198HtPL5CfCPYJ3X8TTrO06ChWxotTw6Sm2el4WkYdrfN5Rh7vEuVguXyPrTezvm3ntblRX8TpjAHeMQfHkEpTA600waD2fMrT';
+            // Moving the below code to it's own module
+            // await new Promise((resolve, reject)=>{
+            //     const script = document.createElement('script');
+            //     script.type = 'text/javascript';
+            //     script.src = scriptUrl;
+            //     script.onload = ()=>{
+            //         console.log("The script has loaded!")
+            //         resolve();
+            //     }
+            //     document.getElementsByTagName('head')[0].appendChild(script);
+            //     console.log("The script has been added to the head!")
+            // })
+            await loadScript(scriptUrl) // we dont need a variable, we just need to wait
+            // console.log("Let's run some Stripe")
+            const stripe = window.Stripe(stripePublicKey);
         }
     }
 
