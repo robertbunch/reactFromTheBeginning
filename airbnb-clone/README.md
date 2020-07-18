@@ -70,3 +70,8 @@
         -- this is where Stripe is going to send the user after payment
     -- failure callback path: http://localhost:3000/payment-canceled/:token
         -- this is where Stripe is going to send the user if payment is canceled
+
+- /payment/success
+    -- expects: token (in url)
+    -- success: {msg: "reservationConfirmed"}
+    -- errors: {msg: error} (error is an object)
