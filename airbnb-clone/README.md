@@ -64,7 +64,7 @@
         checkOut,
         token,
         currency (default: 'USD'),
-    -- success: A checkout screen with stripe!
+    -- success: sessionVar (send it to Stripe for a checkout screen!)
     -- errors: {msg: "missingData"} 
     -- success callback path: http://localhost:3000/payment-success/:token
         -- this is where Stripe is going to send the user after payment

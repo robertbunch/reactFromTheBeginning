@@ -76,6 +76,25 @@ class SingleFullVenue extends Component{
             await loadScript(scriptUrl) // we dont need a variable, we just need to wait
             // console.log("Let's run some Stripe")
             const stripe = window.Stripe(stripePublicKey);
+            const stripeSessionUrl = `${window.apiHost}/payment/create-session`;
+            const data = {
+                venueData: this.state.singleVenue,
+                totalPrice,
+                diffDays,
+                pricePerNight,
+                checkIn: this.state.checkIn,
+                checkOut: this.state.checkOut,
+                token: this.props.auth.token,
+                currency: 'USD',
+            }
+            const sessionVar = await axios.post(stripeSessionUrl,data);
+            // console.log(sessionVar.data);
+            stripe.redirectToCheckout({
+                sessionId: sessionVar.data.id,
+            }).then((result)=>{
+                console.log(result);
+                //if the network fails, this will run
+            })
         }
     }
 
