@@ -63,6 +63,7 @@
         checkIn,
         checkOut,
         token,
+        numberOfGuest (default 2),
         currency (default: 'USD'),
     -- success: sessionVar (send it to Stripe for a checkout screen!)
     -- errors: {msg: "missingData"} 

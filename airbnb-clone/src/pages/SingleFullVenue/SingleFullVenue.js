@@ -85,8 +85,10 @@ class SingleFullVenue extends Component{
                 checkIn: this.state.checkIn,
                 checkOut: this.state.checkOut,
                 token: this.props.auth.token,
+                numberOfGuests: this.state.numberOfGuests,
                 currency: 'USD',
             }
+            
             const sessionVar = await axios.post(stripeSessionUrl,data);
             // console.log(sessionVar.data);
             stripe.redirectToCheckout({
