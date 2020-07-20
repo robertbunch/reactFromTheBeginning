@@ -73,6 +73,21 @@
         -- this is where Stripe is going to send the user if payment is canceled
 
 - /payment/success
-    -- expects: token (in url)
-    -- success: {msg: "reservationConfirmed"}
+    -- expects: stripToken (in url), token
+    -- success: {
+            reservationDetails: {
+                checkIn,
+                checkOut,
+                currency,
+                diffDays,
+                iat,
+                numberOfGuests,
+                pricePerNight,
+                totalPrice,
+                venueData: {
+                    All data about this venue!
+                }      
+            },
+            userData
+        }
     -- errors: {msg: error} (error is an object)
