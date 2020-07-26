@@ -4,6 +4,7 @@ import swal from 'sweetalert';
 import axios from 'axios';
 
 function Bookings(props){
+    console.log(props);
     return(
         <h1>Bookings</h1>
     )
