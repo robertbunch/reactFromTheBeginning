@@ -1,0 +1,24 @@
+.venues{
+    margin-top:20px;
+}
+
+.venues .venue{
+    margin-bottom: 30px;
+}
+
+.venues .venue a{
+    color: #000;
+}
+
+.venues .venue img{
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.venues .venue .location{
+    color: rgb(113, 113, 113) !important;
+}
+
+.venue .material-icons{
+    color: #f00;
+}

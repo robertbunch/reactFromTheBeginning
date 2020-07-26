@@ -1,0 +1,57 @@
+img{
+    max-width: 100%;
+}
+
+.reservation-success{
+    margin-top: 75px;
+}
+
+.confirmed{
+    font-size: 42px;
+    font-weight: bold;
+}
+
+.confirmed svg{
+    margin-right: 10px;
+}
+
+.confirmed .header-text{
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.confirmed-detail .bordered{
+    border: 1px solid;
+}
+
+.confirmed-detail .upper{
+    margin-top: 30px;
+}
+.confirmed-detail .lower{
+    margin-bottom: 30px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.charges.row{
+    margin-left: 15px;
+}
+
+.charges-text{
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.row.col.total{
+    padding: 30px;
+    background-color: #ECEFEC;
+}
+
+.title-text{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.resv-image {
+    padding: 50px;   
+}
