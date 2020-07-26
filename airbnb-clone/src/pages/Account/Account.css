@@ -1,0 +1,31 @@
+.account{
+    position: relative;
+    z-index: 100;
+    margin-top: 55px;
+}
+
+.account .col.s8.offset-s3{
+    margin-top: 50px;
+}
+
+.account .sidenav.sidenav-fixed{
+    top: 64px;
+}
+
+.account .center-align{
+    justify-content: center;
+}
+
+.account .sidenav span.account-link{
+    color: rgba(0,0,0,0.87);
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    height: 48px;
+    line-height: 48px;
+    padding: 0 32px;
+}
+
+.booking td, .booking th{
+    vertical-align: top;
+}
