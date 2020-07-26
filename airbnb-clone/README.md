@@ -91,3 +91,18 @@
             userData
         }
     -- errors: {msg: error} (error is an object)
+
+/users/getBookings
+    - expects: token (jwt)
+    - success: [bookings]
+    - errors: {msg:"badJwt"}
+
+/reservation/cancel
+    - expects: token (jwt)
+    - success: {msg: "cancelled"}
+    - error: {msg: "badId"}
+
+/users/change-password
+    - expects: token (jwt), newPassword,
+    - success: {msg: "passUpdated"}
+    - error: {msg: "badJwt"}
