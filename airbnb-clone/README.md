@@ -98,7 +98,7 @@
     - errors: {msg:"badJwt"}
 
 /reservation/cancel
-    - expects: token (jwt)
+    - expects: token (jwt), bid
     - success: {msg: "cancelled"}
     - error: {msg: "badId"}
 
