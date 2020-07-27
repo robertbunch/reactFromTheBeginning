@@ -106,3 +106,11 @@
     - expects: token (jwt), newPassword,
     - success: {msg: "passUpdated"}
     - error: {msg: "badJwt"}
+
+/search/:searchTerm
+    will respond with:
+    {
+        venues: [],
+        cities: [],
+        activities: [],
+    }
