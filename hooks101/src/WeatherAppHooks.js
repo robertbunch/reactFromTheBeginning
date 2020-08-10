@@ -1,35 +1,27 @@
-import React, {Component} from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import CityWeatherHooks from './CityWeatherHooks';
 
-class WeatherApp extends Component {
-    state = {
-        city: "London",
-        cityNameForWeather: "London",
-    }
+function WeatherApp(props){
+    const [ city, changeCity ] = useState("London");
+    const [ cityNameForWeather, changeCityNameForWeather ] = useState("London");
 
-    changeCity = (e)=>{
-        this.setState({city:e.target.value})
-    }
-
-    citysearch = (e)=>{
+    const citysearch = (e)=>{
         e.preventDefault();
-        this.setState({cityNameForWeather: this.state.city})
+        changeCityNameForWeather(city)
     }
 
-    render(){
-        return(
-            <div className="container">
-                <CityWeatherHooks cityName={this.state.cityNameForWeather} />
-                <div className="row justify-content-center">
-                    <form onSubmit={this.citysearch}>
-                        <input type="text" value={this.state.city} onChange={this.changeCity} />
-                        <input type="submit" className="btn btn-primary" value="Search!" />
-                    </form>
-                </div>
+    return(
+        <div className="container">
+            <CityWeatherHooks cityName={cityNameForWeather} />
+            <div className="row justify-content-center">
+                <form onSubmit={citysearch}>
+                    <input type="text" value={city} onChange={(e)=>changeCity(e.target.value)} />
+                    <input type="submit" className="btn btn-primary" value="Search!" />
+                </form>
             </div>
-        )
-    }
+        </div>
+    )
 }
 
 export default WeatherApp;
