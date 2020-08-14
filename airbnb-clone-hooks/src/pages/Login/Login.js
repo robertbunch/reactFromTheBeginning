@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import './Login.css';
-// import {connect} from 'react-redux';
+import { useDispatch } from 'react-redux';
 import openModal from '../../actions/openModal';
 import regAction from '../../actions/regAction'
 import SignUp from './SignUp';
@@ -10,14 +10,13 @@ import swal from 'sweetalert'
 
 function Login(props){
 
+    const dispatch = useDispatch()
+
     const [ email, changeEmail ] = useState("");
     const [ password, changePassword ] = useState("");
 
     const submitLogin = async(e)=>{
         e.preventDefault();
-        console.log(email);
-        console.log(password);
-
         const url = `${window.apiHost}/users/login`;
         const data = {
             email: email,
@@ -46,7 +45,15 @@ function Login(props){
                 icon: "success",
               });
             // we call our register action to update our auth reducer!!
-            props.regAction(resp.data);
+            // props.regAction(resp.data);
+            // window.setTimeout(()=>{
+                // dispatch({
+                //     type: "REGISTER_ACTION",
+                //     payload: resp.data,
+                // });
+            // },3000)
+            dispatch(regAction(resp.data))
+            
         }
     }
 
@@ -63,10 +70,10 @@ function Login(props){
                 <input onChange={(e)=>changePassword(e.target.value)} value={password} type="password" className="browser-default" placeholder="Password" />
                 <button className="sign-up-button">Login</button>
                 <div className="divider"></div>
-                <div>Don't have an account? <span className="pointer" onClick={()=>{props.openModal('open',<SignUp />)}}>Sign up</span></div>
+                <div>Don't have an account? <span className="pointer" onClick={()=>dispatch(openModal('open',<SignUp />))}>Sign up</span></div>
             </form>
         </div>
     )
 }
 
-export default (Login);
+export default Login;
