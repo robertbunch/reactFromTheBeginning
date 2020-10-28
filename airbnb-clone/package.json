@@ -1,6 +1,6 @@
 {
   "name": "airbnb-clone",
-  "homepage": ".",
+  "homepage": "/airbnb-fast",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
