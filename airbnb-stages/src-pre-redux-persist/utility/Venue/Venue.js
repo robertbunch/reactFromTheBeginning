@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-class City extends Component{
+class Venue extends Component{
 
     render(){
         // console.log(this.props.city);
@@ -25,5 +25,5 @@ class City extends Component{
     }
 }
 
-export default City;
+export default Venue;
     
