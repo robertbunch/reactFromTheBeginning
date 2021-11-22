@@ -12,7 +12,7 @@ function MultiCard(props){
     const answerLetter = choices[answerIndex];
 
     return(
-        <div>
+        <>
             <div className="card-back">
                 <div>{question.service}</div>
                 <ul className="multi">
@@ -22,7 +22,7 @@ function MultiCard(props){
             <div className="card-front">
                 {answerLetter}. {question.answer}
             </div>
-        </div>
+        </>
         )
     }
     

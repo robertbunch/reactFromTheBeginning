@@ -4,7 +4,7 @@ function RegularCard(props){
     console.log(props.questionData);
     const question = props.questionData;
     return(
-        <div>
+        <>
             <div className="card-back">
                 {question.service}
             </div>
@@ -13,7 +13,7 @@ function RegularCard(props){
                 <div>{question.cat}</div>
             </div>
 
-        </div>
+        </>
         )
     }
     
